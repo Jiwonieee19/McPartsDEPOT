@@ -1,0 +1,233 @@
+.content-wrapper {
+    background-color: transparent !important;
+}
+
+/* HEADERS  */
+
+.custom-div {
+    margin-top: 1.2rem !important;
+    justify-content: center !important;
+}
+
+/* .custom-div .right-div {
+    align-self: center !important;
+    background-color: white !important;
+    border-radius: 0.7rem !important;
+} */
+
+.custom-status .nav-link {
+    font-family: 'Oxanium';
+    justify-content: center !important;
+    align-self: center !important;
+    color: black !important;
+    font-size: smaller !important;
+    font-weight: 100 !important;
+    background-color: #7B7B7B !important;
+}
+
+.custom-status .nav-link .active {
+    color: #00A9C7 !important;
+}
+
+.custom-status .nav-link:hover {
+    color: #00A9C7 !important;
+    background-color: #383838 !important;
+}
+
+.custom-controls {
+    color: #00441B !important;
+}
+
+.custom-controls select {
+    font-family: 'Oxanium';
+    color: #262626 !important;
+    background-color: transparent;
+    border: 1px solid #262626 !important;
+}
+
+
+.form-control {
+    font-family: 'Oxanium';
+    font-size: 14px;
+    font-weight: 600;
+    color: whitesmoke;
+    background-color: transparent !important;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+.form-control {
+    background-color: #ddd;
+    color: #000;
+}
+
+.custom-controls .btn {
+    font-family: 'Oxanium';
+    font-size: 16px;
+    background-color: #106979 !important;
+    color: white !important;
+    border-radius: 10px;
+}
+
+/* TABLES */
+
+/* Table Font Styling */
+#userTable {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #333;
+    /* Default font color */
+}
+
+/* Table Header */
+/* #userTable thead {
+    background-color: #F5F5F5;
+    color: 00441B;
+    font-weight: bold; 
+    } */
+/* Make header bold */
+
+#userTable thead th {
+    font-family: 'Oxanium';
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+    color: #262626 !important;
+}
+
+/* Table Body */
+#userTable tbody td {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    /* Control text weight */
+    color: #444;
+    /* Slightly darker text for contrast */
+}
+
+#userTable tbody tr:hover {
+    background-color: #383838;
+}
+
+/* #userTable tbody tr:hover td:nth-child(-n+4),
+#userTable tbody tr:hover td:nth-child(-n+4) * {
+    color: #00A9C7 !important;
+} */
+
+
+
+
+/* DataTables Pagination */
+.dataTables_wrapper .dataTables_paginate {
+    margin-top: 10px !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 6px 12px;
+    background-color: #106979 !important;
+    color: whitesmoke !important;
+    border-radius: 10px;
+    margin: 2px;
+    font-weight: 650 !important;
+    font-size: 1.2rem !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #00A9C7 !important;
+    color: whitesmoke !important;
+}
+
+/* Active Page */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #00A9C7 !important;
+    color: whitesmoke !important;
+    font-size: 1rem !important;
+}
+
+/* Search Bar */
+/* .dataTables_filter input {
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+} */
+
+
+.dataTables_info {
+    font-family: 'Oxanium';
+    font-size: 1.2rem !important;
+    /* Adjust text size */
+    font-weight: 650 !important;
+    /* Make it bold */
+    color: #262626 !important;
+    /* Change text color (blue) */
+    text-align: center;
+    /* Center align */
+}
+
+
+/* Table Length Dropdown */
+.dataTables_length label {
+    font-family: 'Oxanium';
+    color: #262626 !important;
+    font-size: 1.2rem !important;
+    font-weight: 650 !important;
+}
+
+.dataTables_length select {
+    border: 1px solid black !important;
+    border-radius: 5px !important;
+    padding: 5px;
+    font-size: 14px;
+    margin-left: 0.4rem !important;
+}
+
+
+/* NOTIFICATION WILL NOT BE BEHIND THE ACTIVE SIDEBAR */
+#notification-alert {
+    font-size: 1rem !important;
+    z-index: 9999;
+    /* Ensures it's above most elements */
+    position: fixed;
+    /* Keeps it visible */
+    top: 2rem;
+    /* Adjust based on your layout */
+    right: 2rem;
+    width: 73%;
+}
+
+.vertical-header {
+    max-width: 100px;
+    /* Adjust width to fit around 5 words per line */
+    word-wrap: break-word;
+    /* Enables text wrapping */
+    white-space: normal;
+    /* Ensures wrapping */
+    text-align: center;
+    /* Centers text */
+    padding: 5px;
+    /* Adds spacing for better readability */
+}
+
+.btn-dlt {
+    background-color: red;
+    color: white;
+    border-radius: 7px;
+}
+
+.btn-dlt:hover {
+    background-color: #7B7B7B;
+    color: black;
+}
+
+.btn-act {
+    background-color: #262626;
+    color: white;
+    border-radius: 7px;
+}
+
+.btn-act:hover {
+    background-color: #7B7B7B;
+    color: black;
+}

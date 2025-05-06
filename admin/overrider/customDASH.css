@@ -1,0 +1,208 @@
+.content-wrapper {
+    padding: 0rem 5.8rem !important;
+    /* padding-right: 23rem !important; */
+    transition: all 0.3s ease-in-out !important;
+    background-color: #F5F5F5 !important;
+    padding-top: 4.5rem !important;
+}
+
+.header-custom {
+    font-family: 'Oxanium';
+    color: #262626 !important;
+    margin-top: 1rem !important;
+    font-size: 2.5rem !important;
+    /* font-weight: 1500 !important; */
+    /* position: fixed !important; */
+}
+
+.refresh-custom a {
+    font-weight: 400 !important;
+    color: white !important;
+    font-size: 1.2rem !important;
+}
+
+/* Force small-box to use flexbox */
+.small-box {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-direction: row-reverse !important;
+    /* Moves icon to the left */
+    padding: 15px !important;
+    position: relative;
+    background-color: #7B7B7B !important;
+    border-radius: 1rem !important;
+    min-width: 0 !important;
+    /* Prevents overflow issues */
+}
+
+/* Keep icon inside the box */
+.small-box .icon {
+    position: static !important;
+    /* Removes absolute positioning */
+    font-size: 50px !important;
+    /* Adjust icon size */
+    margin-right: 1rem !important;
+    margin-left: 3rem !important;
+    /* Add spacing between icon & text */
+    color: #262626 !important;
+    max-width: 50% !important;
+    /* Allow full width */
+
+}
+
+.small-box.row2 {
+    display: flex !important;
+    flex-direction: column !important;
+    /* VBox-like stacking */
+    justify-content: flex-start !important;
+    /* Align top */
+    align-items: stretch !important;
+    padding: 15px !important;
+    height: auto !important;
+    /* Expand to fit content */
+}
+
+/* Make sure the header (Gender + Icon) is properly aligned */
+.header-section {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    /* Moves the icon to the left */
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Text stays on the right */
+.header-section .inner {
+    flex-grow: 1 !important;
+    text-align: left !important;
+}
+
+/* Move the icon to the left */
+.header-section .icon {
+    font-size: 50px !important;
+    margin-right: 1rem !important;
+    margin-left: 0 !important;
+    /* No extra spacing */
+    color: #262626 !important;
+}
+
+.header-p {
+    color: 262626 !important;
+    font-size: 1.7rem !important;
+    font-weight: 2rem !important;
+}
+
+/* Ensure the chart is below and expands */
+.small-box.row2 .card-body {
+    flex-grow: 1 !important;
+    width: 100% !important;
+    background: inherit !important;
+    justify-content: center !important;
+}
+
+
+/* Ensure text expands */
+.small-box .inner {
+    flex-grow: 1 !important;
+    text-align: left !important;
+    color: #262626 !important;
+    min-width: 0 !important;
+    /* Prevents overflow issues */
+}
+
+/* Remove unwanted absolute styles in AdminLTE */
+.small-box .icon>i {
+    position: static !important;
+    display: block !important;
+}
+
+#pieChart {
+    width: 100% !important;
+    height: 250px !important;
+}
+
+
+/* FOR BAR GRAPH */
+
+/* Ensure header (Icon + Text) is properly aligned - Only affects 'Latest Medication Data' */
+.small-box.row2.medication-box .medication-header {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Icon stays on the left */
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Style the text alignment for this specific section */
+.small-box.row2.medication-box .medication-inner {
+    flex-grow: 1 !important;
+    text-align: left !important;
+    /* margin-top: 0.25rem !important; */
+    color: black !important;
+}
+
+/* Move the icon to the left for this section only */
+.small-box.row2.medication-box .medication-icon {
+    font-size: 50px !important;
+    margin-right: 1rem !important;
+    /* Space between icon and text */
+    color: black !important;
+}
+
+/* Ensure the chart is below and expands (only for this section) */
+.small-box.row2.medication-box .medication-card-body {
+    flex-grow: 1 !important;
+    width: 100% !important;
+    background: inherit !important;
+    justify-content: center !important;
+}
+
+/* Ensure text expands properly */
+.small-box.row2.medication-box .medication-inner {
+    flex-grow: 1 !important;
+    text-align: left !important;
+    min-width: 0 !important;
+    /* Prevents overflow issues */
+}
+
+/* Remove unwanted absolute styles in AdminLTE for this section only */
+.small-box.row2.medication-box .medication-icon>i {
+    position: static !important;
+    display: block !important;
+}
+
+/* Control the size of the medication icon */
+.medication-header .medication-icon i {
+    font-size: 73px !important;
+    /* Adjust size as needed */
+    color: #262626 !important;
+    /* Match theme color */
+}
+
+/* Medication Box Hover Effect */
+.medication-box:hover .medication-icon {
+    transform: scale(1.1);
+    /* Slightly enlarge icon on hover */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Ensure smooth animation */
+.medication-icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* CALENDAR */
+
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    width: 100%;
+    /* Ensures it spans the parent width */
+    padding: 0.6rem 0;
+    /* Adds space above and below */
+}

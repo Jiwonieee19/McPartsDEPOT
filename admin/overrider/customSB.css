@@ -1,0 +1,161 @@
+/* WIDTH OF SIDEBAR ANG HOW TOPBAR AND CONTENT ADJUST */
+
+[class*=sidebar-light-] .sidebar a {
+    color: white !important;
+}
+
+@media (min-width: 768px) {
+
+    /* Default sidebar (Expanded) */
+    .main-sidebar {
+        width: 23.9rem !important;
+        transition: width 0.3s ease-in-out;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        height: 100vh !important;
+        /* Full height */
+        z-index: 1030 !important;
+        /* Ensures it stays above other content */
+        background-color: #262626 !important;
+        box-shadow: 1.4rem 0.1rem 3rem rgba(0, 0, 0, 0.5) !important;
+        /* Custom drop shadow */
+
+    }
+
+    /* Fix active nav-link color */
+    .main-sidebar .nav-link.active {
+        margin-right: 0.44rem !important;
+        border-radius: 0.7rem !important;
+        background-color: #7B7B7B !important;
+        /* Adjust based on your theme */
+        color: black !important;
+        /* Set visible text color */
+    }
+
+    /* Default content-wrapper positioning (only shifts when sidebar is expanded) */
+    .content-wrapper,
+    .main-header,
+    .main-footer {
+        margin-left: 25rem !important;
+        /* Match sidebar width */
+        transition: margin-left 0.3s ease-in-out !important;
+    }
+
+    /* When sidebar is collapsed */
+    body.sidebar-collapse .main-sidebar {
+        width: 80px !important;
+        /* Match collapsed sidebar width */
+    }
+
+    /* Ensure content fully shifts to the left when sidebar is collapsed */
+    body.sidebar-collapse .content-wrapper,
+    body.sidebar-collapse .main-header,
+    body.sidebar-collapse .main-footer {
+        margin-left: 0 !important;
+        /* No gap */
+        width: 100% !important;
+        /* Full width */
+    }
+}
+
+/* Fix any unwanted padding that might be causing the gap */
+.content-wrapper {
+    padding: 0 !important;
+}
+
+/* Ensure navbar stays aligned */
+.main-header {
+    border-bottom: 1px solid #dee2e6 !important;
+    z-index: 1034 !important;
+    /* Make sure it's not covered */
+    transition: margin-left 0.3s ease-in-out !important;
+}
+
+.main-sidebar .nav-sidebar .nav-item .nav-link:hover {
+    margin-right: 0.44rem !important;
+    border-radius: 0.7rem !important;
+    background-color: #3D3D3D !important;
+    /* Match active link */
+    color: #00A9C7 !important;
+}
+
+@font-face {
+    font-family: 'Oxanium';
+    /* You can name it whatever you want */
+    src: url('../assets/FONTS/Oxanium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OdibeeSans';
+    /* You can name it whatever you want */
+    src: url('../assets/FONTS/OdibeeSans.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
+}
+
+/* FONTS AND LIGHTWEIGHT */
+
+/* Apply to all sidebar text */
+.main-sidebar,
+.main-sidebar .nav-sidebar a,
+.main-sidebar .brand-text,
+.sidebar .nav-item .nav-link p {
+    font-family: 'Oxanium' !important;
+    font-weight: 500 !important;
+    /* Change to your preferred weight (600, 700, bold) */
+}
+
+/* Ensure the user panel text is bold */
+.user-panel .info a {
+    font-weight: bolder !important;
+    font-size: 32px !important;
+}
+
+/* Fix sidebar header text weight */
+.sidebar .nav-header {
+    font-weight: 100 !important;
+    text-transform: uppercase !important;
+    /* Optional: makes headers stand out */
+}
+
+/* Override specific Bootstrap font styles */
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link,
+.sidebar-light-primary .nav-sidebar .nav-header {
+    font-weight: 900 !important;
+}
+
+/* Fix dropdown menu font weight inside sidebar */
+.nav-sidebar .nav-treeview .nav-item .nav-link {
+    font-weight: 100 !important;
+}
+
+[class*=sidebar-light-] .sidebar .nav-header {
+    color: #00A9C7 !important;
+    /* Replace with your desired color */
+}
+
+
+
+/* LOGOTEXT ON TOP */
+
+.sidebar .user-panel .info .barangay-title {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    color: black !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    display: block !important;
+    /* Ensure it remains a block element */
+}
+
+/* Ensure hover works */
+.sidebar .user-panel .info .barangay-title:hover {
+    color: #007B3D !important;
+}
+
+.sidebar .user-panel .info .barangay-name:hover {
+    color: #007B3D !important;
+}

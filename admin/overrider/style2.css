@@ -1,0 +1,270 @@
+/* General styles inside myel2-modal */
+.myel2-modal body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    text-align: left;
+    /* Ensures left alignment for all text in the body */
+}
+
+.myel2-modal .text {
+    color: #1e4d2b;
+    text-align: left;
+    /* Ensure text is aligned to the left */
+}
+
+.myel2-modal label {
+    font-size: 12px;
+    text-align: left;
+    /* Align label text to the left */
+}
+
+.myel2-modal .text2 {
+    color: #000000;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+    text-align: left;
+    /* Align text to the left */
+}
+
+.myel2-modal .text3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+    /* Align text to the left */
+}
+
+.myel2-modal .text5 {
+    color: #1e4d2b;
+    font-weight: 700;
+    text-align: left;
+    /* Align text to the left */
+}
+
+.myel2-modal .close {
+    font-size: 3px;
+    text-align: left;
+    /* Align text to the left */
+}
+
+.myel2-modal .modal-header {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    flex-direction: column;
+    text-align: left;
+    /* Align text in header to the left */
+}
+
+/* Main container inside modal */
+.myel2-modal .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    /* Ensure content is left-aligned */
+}
+
+/* Section headings inside modal */
+.myel2-modal h2 {
+    color: #0B3D02;
+    text-align: left;
+    /* Align heading to the left */
+}
+
+.myel2-modal h3 {
+    color: #0B3D02;
+    border-bottom: 2px solid #0B3D02;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+    /* Align heading to the left */
+}
+
+/* Form inputs inside modal */
+.myel2-modal label {
+    font-weight: bold;
+    text-align: left;
+    /* Align label text to the left */
+}
+
+.myel2-modal .form-group {
+    margin-left: 100px;
+    text-align: left;
+    /* Align text inside form groups to the left */
+}
+
+.myel2-modal input,
+.myel2-modal select {
+    width: 100%;
+    padding: 20px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: left;
+    /* Align input and select text to the left */
+}
+
+/* Grid layout inside modal */
+.myel2-modal .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.myel2-modal .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Readonly fields inside modal */
+.myel2-modal input[readonly] {
+    background-color: #eee;
+    color: #555;
+    text-align: left;
+    /* Align readonly input text to the left */
+}
+
+/* Button styling inside modal */
+.myel2-modal .button {
+    background-color: #0B3D02;
+    color: white;
+    max-width: 120px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.myel2-modal .button:hover {
+    background-color: #095A00;
+}
+
+/* Responsive styles inside modal */
+@media (max-width: 600px) {
+
+    .myel2-modal .grid,
+    .myel2-modal .grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* General styling for all form controls inside myel2-modal */
+.myel2-modal .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    /* Align text inside form controls */
+}
+
+.myel2-modal .form-group {
+    width: 100%;
+    margin: 0;
+    /* Resets unwanted margins */
+    text-align: left;
+    /* Align text to the left */
+}
+
+/* Form control focus effect */
+.myel2-modal .form-control:focus {
+    border-color: #0B3D02;
+    box-shadow: 0 0 5px rgba(11, 61, 2, 0.5);
+    outline: none;
+}
+
+/* Readonly fields */
+.myel2-modal .form-control[readonly] {
+    background-color: #eee;
+    color: #555;
+    cursor: not-allowed;
+    text-align: left;
+    /* Align readonly field text to the left */
+}
+
+/* Styling for textareas */
+.myel2-modal textarea.form-control {
+    height: 120px;
+    resize: none;
+    text-align: left;
+    /* Align text in textareas to the left */
+}
+
+/* Styling for select dropdowns */
+.myel2-modal select.form-control {
+    appearance: auto !important;
+    height: 25px !important;
+    width: 100% !important;
+    font-size: 12px !important;
+    padding: 5px 10px !important;
+    border: 1px solid #ccc !important;
+    background-color: white !important;
+    color: black !important;
+    border-radius: 5px !important;
+    text-align: left;
+    /* Align select dropdown text to the left */
+}
+
+/* Ensure dropdown text is aligned properly */
+.myel2-modal select.form-control option {
+    font-size: 12px !important;
+    text-align: left;
+    /* Align option text to the left */
+}
+
+.myel2-modal select.form-control {
+    color: #333 !important;
+    background-color: white !important;
+}
+
+.myel2-modal select.form-control option {
+    color: black;
+}
+
+/* Checkbox and radio styling */
+.myel2-modal .form-check-input {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    accent-color: #0B3D02;
+}
+
+/* Button styling inside forms */
+.myel2-modal .form-control-button {
+    background-color: #0B3D02;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.myel2-modal .form-control-button:hover {
+    background-color: #095A00;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+    .myel2-modal .form-control {
+        font-size: 12px;
+        padding: 8px;
+    }
+}

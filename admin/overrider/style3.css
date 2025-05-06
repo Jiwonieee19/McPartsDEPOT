@@ -1,0 +1,169 @@
+/* General Modal Styling */
+.myel-modal .modal-content {
+    display: flex;
+    border-radius: 10px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #262626;
+}
+
+/* Header Styling */
+.myel-modal .modal-header {
+    font-family: 'Oxanium';
+    text-align: center;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #00A9C7;
+}
+
+.myel-modal strong {
+    font-family: 'Oxanium';
+    font-size: 15px;
+    color: #00A9C7;
+}
+
+.myel-modal .row {
+    margin-top: 15px;
+}
+
+.myel-modal .col {
+    margin: 0%;
+}
+
+.myel-modal .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #00C6E9;
+    object-fit: cover;
+}
+
+.myel-modal .product-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 5%;
+    border: 3px solid #00C6E9;
+    object-fit: cover;
+}
+
+.myel-modal .text {
+    color: #0d3b12;
+}
+
+.myel-modal .text2 {
+    color: #000000;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.myel-modal .text3 {
+    color: #000000;
+    font-weight: 750;
+    font-size: 19px;
+    margin-top: 10px;
+}
+
+.myel-modal .text4 {
+    color: #000000;
+    font-weight: 750;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.myel-modal .text5 {
+    color: #ffffff;
+    font-weight: 750;
+    font-size: 18px;
+    margin-left: 3px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Form Labels & Inputs */
+.myel-modal label {
+    font-weight: bold;
+    color: #0d3b12;
+    font-size: 16px;
+}
+
+.myel-modal .form-control {
+    height: 40px;
+    font-size: 14px;
+    border-radius: 15px;
+    border: 2px solid #D9D9D9;
+    color: whitesmoke;
+    background-color: transparent;
+}
+
+.myel-modal .form-control[readonly] {
+    background-color: #eee;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.myel-modal .button {
+    background-color: #0B3D02;
+    color: white;
+    max-width: 200px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.myel-modal .button:hover {
+    background-color: #095A00;
+}
+
+.myel-modal textarea.form-control {
+    height: 120px;
+    resize: none;
+}
+
+/* Dropdown (Select) Styling */
+/* .myel-modal select.form-control {
+    appearance: none;
+    background: white;
+    padding: 5px;
+} */
+
+
+.myel-modal select.form-control {
+    height: 40px !important;
+    font-size: 14px !important;
+    border-radius: 15px !important;
+    border: 2px solid #D9D9D9 !important;
+    color: whitesmoke !important;
+    background-color: #262626 !important;
+    padding: 5px 10px !important;
+}
+
+/* Button Styling */
+.myel-modal .btn-success {
+    font-family: 'Oxanium';
+    background-color: #00A9C7;
+    border-radius: 20px;
+    border: 3px solid #00D9FF;
+    font-size: 16px;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.myel-modal .btn-success:hover {
+    background-color: #00D9FF;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .myel-modal .modal-dialog {
+        width: 90%;
+        margin: auto;
+    }
+}

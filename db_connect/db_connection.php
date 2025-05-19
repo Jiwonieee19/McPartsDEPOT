@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root"; // Change this to your database username
 $password = ""; // Change this to your database password
-$dbname = "bhc_db"; // Change this to your actual database name
+$dbname = "mcparts_trial"; // Change this to your actual database name
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

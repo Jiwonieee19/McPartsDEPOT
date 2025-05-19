@@ -80,20 +80,24 @@
     <li class="nav-item dropdown mr-5">
 
       <a class="nav-link d-flex flex-column" data-toggle="dropdown">
-        <span class="floot-right text-muted text-md"> <?= $_SESSION['username'] ?></span>
-        <p class="useradmin">Admin</p>
+        <span class="floot-right text-muted text-md"> <?= $_SESSION['staff_username'] ?></span>
+        <p class="useradmin"><?= $_SESSION['ROLE'] ?></p>
       </a>
 
         <div class="user-image">
-          <img src="assets/images/profiles/<?= $_SESSION['profile'] ?>" class="img-circle elevation-2 user-img" alt="User Image" style="width:50px; height:50px;">
+          <img src="assets/images/profiles/<?= $_SESSION['staff_profile'] ?>" class="img-circle elevation-2 user-img" alt="User Image" style="width:50px; height:50px;">
         </div>
         <!-- naay equal sa tunga<??>htmlspecialchars($_SESSION['usr_profile']) -->
 
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu=right">
+
+         <?php if ($_SESSION['staff_username'] !== 'SuperA' && $_SESSION['staff_password'] !== 'admin123'): ?> 
         <div class="dropdown-divider"></div>
-            <button class="dropdown-item" data-toggle="modal" data-target="#addUserModal<?= $_SESSION['userid'] ?>">
+            <button class="dropdown-item" data-toggle="modal" data-target="#addUserModal<?= $_SESSION['staff_id'] ?>">
               <i class="fas fa-cog mr-2"></i> Settings
             </button>
+         <?php endif; ?>
+
 
 
         <div class="dropdown-divider"></div>
@@ -112,7 +116,7 @@
 
 
                                           <!-- EDIT MODAL -->
-                                          <div class="modal fade myel-modal" id="addUserModal<?= $_SESSION['userid'] ?>" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+                                          <div class="modal fade myel-modal" id="addUserModal<?= $_SESSION['staff_id'] ?>" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
                                               <div class="modal-dialog modal-lg" role="document">
                                                 <div class="modal-content">
 
@@ -125,31 +129,31 @@
                                                         <form action="../components/save_settings.php" method="POST" enctype="multipart/form-data">
                                                             <!-- Profile Picture -->
                                                             <div class="text-center" style="margin: 0 6.5rem;">
-                                                                <img src="assets/images/profiles/<?= $_SESSION['profile'] ?>" alt="Profile Picture" class="profile-img mb-3">
-                                                                <input type="file" class="form-control mt-2" name="profile">
+                                                                 <img src="assets/images/profiles/<?= $_SESSION['staff_profile'] . '?v=' . time(); ?>" alt="Profile Picture" class="profile-img mb-3">
+                                                                <input type="file" class="form-control mt-2" name="staff_profile">
                                                             </div>
 
                                                             <!-- User ID (Read-Only) -->
                                                             <div class="form-group" style="margin: 0.8rem 6.5rem 0 6.5rem;">
                                                                 <label><strong>Resident ID</strong></label>
-                                                                <input type="number" class="form-control" name="userid" value="<?= $_SESSION['userid']; ?>" style="background-color: #383838;" readonly>
+                                                                <input type="number" class="form-control" name="staff_id" value="<?= $_SESSION['staff_id']; ?>" style="background-color: #383838;" readonly>
                                                             </div>
 
                                                             <!-- Username -->
                                                             <div class="form-group" style="margin: 0.8rem 6.5rem 0 6.5rem;">
                                                                 <label><strong>Username</strong></label>
-                                                                <input type="text" class="form-control" name="username" value="<?= $_SESSION['username']; ?>">
+                                                                <input type="text" class="form-control" name="staff_username" value="<?= $_SESSION['staff_username']; ?>">
                                                             </div>
 
                                                             <!-- Password & Confirmation -->
                                                             <div class="row" style="margin: 0.8rem 6rem 0 6rem;">
                                                                 <div class="col-md-6">
                                                                     <label><strong>Password</strong></label>
-                                                                    <input type="password" class="form-control" name="password" value="<?= $_SESSION['password']; ?>">
+                                                                    <input type="password" class="form-control" name="staff_password" value="<?= $_SESSION['staff_password']; ?>">
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <label><strong>Confirm Password</strong></label>
-                                                                    <input type="password" class="form-control" name="confirm_password" value="<?= $_SESSION['password']; ?>">
+                                                                    <input type="password" class="form-control" name="confirm_password" value="<?= $_SESSION['staff_password']; ?>">
                                                                 </div>
                                                             </div>
 

@@ -17,39 +17,39 @@
                     <table id="userTable" class="display">
 
                         <thead>
-                        <tr class="user-row" data-purok="<?= $row['purok']; ?>">
+                        <tr class="user-row">
                             <th>SUP ID</th>
-                            <th>FULLNAME</th>
-                            <th>EMAIL</th>
-                            <th>PRODUCT SUPPLIED</th>
-                            <th>QUANTITY</th>
-                            <th>TRANSACTION TIME</th>
+                            <th>SUP NAME</th>
+                            <th>PRODUCT NAME</th>
+                            <th>ADDED QUANTITY</th>
+                            <th>STOCK QUANTITY</th>
+                            <th>TRANSACTION DATE</th>
                         </tr>
 
                         </thead>
                         <tbody>
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                        <?php while ($row = mysqli_fetch_assoc($supplierTransactionsResult)) { ?>
 
-                            <tr data-purok="<?= $row['purok']; ?>">
+                            <tr>
                             <td>
-                                <?= $row['userid']; ?>
+                                <?= $row['supplier_id']; ?>
                             </td>
                             <td>
-                                <?= $row['username']; ?>
+                                <?= $row['supplier_fullname']; ?>
                             </td>
                             <td>
-                                <?= $row['firstname']; ?>
+                                <?= $row['product_name']; ?>
                             </td>
                             <td>
-                                <?= $row['lastname']; ?>
+                                <?= $row['stock_in_quantity']; ?>
                             </td>
                             <td>
-                                <?= $row['age']; ?>
+                                <?= $row['stock_quantity']; ?>
                             </td>
                             <td>
-                                <?= $row['purok']; ?>
+                                <?= $row['stock_in_date']; ?>
                             </td>
-   
+
                             </tr>
 
                         <?php } ?>
@@ -114,9 +114,9 @@
                     "searching": false, // Disable the default search bar
                     "language": {
                         "lengthMenu": "Display _MENU_ ", // Change "Show X entries"
-                        "info": "Showing _END_ / _TOTAL_ total transactions", // Change "Showing X to Y of Z entries"
-                        "infoEmpty": "No transactions available", // Message when no records
-                        "infoFiltered": "(filtered from _MAX_ total transactions)", // Change "filtered from Z total entries"
+                        "info": "Showing _END_ / _TOTAL_ total suppliers", // Change "Showing X to Y of Z entries"
+                        "infoEmpty": "No supplier/s available", // Message when no records
+                        "infoFiltered": "(filtered from _MAX_ total suppliers)", // Change "filtered from Z total entries"
                         "paginate": {
                             "next": "Next >", // Change "Next"
                             "previous": "< Prev" // Change "Previous"

@@ -1,0 +1,111 @@
+.product-image {
+    height: 12rem !important;
+    width: 12rem !important;
+    object-fit: contain !important;
+    border-radius: 13px 13px 0px 0px;
+    background-color: #106979 !important;
+}
+
+.view-product-image {
+    height: 21rem !important;
+    width: 21rem !important;
+    object-fit: contain !important;
+    border-radius: 13px;
+    background-color: #106979 !important;
+}
+
+.product-price {
+    color: whitesmoke !important;
+    font-size: 1.1rem !important;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Oxanium';
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+.card.custom-card {
+    background-color: transparent !important;
+    width: 12rem;
+    height: auto;
+}
+
+.product-card {
+    background-color: #262626;
+    width: 12rem !important;
+    height: 8rem !important;
+    padding: 12px !important;
+    border-radius: 0px 0px 13px 13px;
+}
+
+.product-card1 {
+    background-color: #262626;
+    width: 12rem !important;
+    height: 9.5rem !important;
+    padding: 12px !important;
+    border-radius: 0px 0px 13px 13px;
+}
+
+.card-title {
+    font-family: 'Oxanium';
+    font-size: 1.1rem !important;
+    color: #00A9C7;
+    margin: 0 !important;
+}
+
+.btn-addcart {
+    font-family: 'Oxanium';
+    font-size: 16px;
+    background-color: #106979 !important;
+    color: white !important;
+    border-radius: 8px;
+}
+
+.btn-view {
+    font-size: 16px !important;
+    background-color: #106979 !important;
+    color: whitesmoke !important;
+    border-radius: 8px;
+    height: 28px !important;
+    margin-left: 8px;
+}
+
+.product-p {
+    color: whitesmoke !important;
+    font-family: "Oxanium" !important;
+    font-size: 1rem !important;
+}
+
+.product-categ {
+    font-family: 'Oxanium';
+    color: #383838 !important;
+    margin-top: 1rem !important;
+}
+
+.custom-status .product-switch {
+    font-family: 'Oxanium';
+    justify-content: center !important;
+    align-self: center !important;
+    color: black !important;
+    font-size: smaller !important;
+    font-weight: 100 !important;
+    background-color: #7B7B7B !important;
+}
+
+.custom-status .nav-link {
+    font-family: 'Oxanium';
+    justify-content: center !important;
+    align-self: center !important;
+    color: black !important;
+    font-size: smaller !important;
+    font-weight: 100 !important;
+    background-color: #7B7B7B !important;
+}
+
+.custom-status .nav-link .active {
+    color: #00A9C7 !important;
+}
+
+.custom-status .nav-link:hover {
+    color: #00A9C7 !important;
+    background-color: #383838 !important;
+}

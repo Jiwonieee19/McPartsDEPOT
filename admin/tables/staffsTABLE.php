@@ -17,10 +17,14 @@
                     <table id="userTable" class="display">
 
                         <thead>
-                        <tr class="user-row" data-purok="<?= $row['purok']; ?>">
+                        <tr class="user-row">
                             <th>STAFF ID</th>
-                            <th>FULLNAME</th>
-                            <th>EMAIL</th>
+                            <th>PROFILE</th>
+                            <th>FIRST NAME</th>
+                            <th>LAST NAME</th>
+                            <th>BIRTH DATE</th>
+                            <th>EMAIL ADDRESS</th>
+                            <th>CONTACT NUMBER</th>
                             <th>HIRED DATE</th>
                             <!-- <th>Age</th>
                             <th>Purok</th> -->
@@ -31,23 +35,39 @@
 
                         </thead>
                         <tbody>
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                        <?php while ($row = mysqli_fetch_assoc($staffsResult)) { ?>
 
-                            <tr data-purok="<?= $row['purok']; ?>">
+                            <tr>
                             <td>
-                                <?= $row['userid']; ?>
+                                <?= $row['staff_id']; ?>
                             </td>
                             <td>
-                                <?= $row['username']; ?>
+                                <img src="assets/images/profiles/<?= $row['staff_profile']; ?>" 
+                                    alt="<?= $row['staff_profile']; ?>" 
+                                    style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px;">
                             </td>
                             <td>
-                                <?= $row['firstname']; ?>
+                                <?= $row['staff_firstname']; ?>
                             </td>
                             <td>
-                                <?= $row['lastname']; ?>
+                                <?= $row['staff_lastname']; ?>
                             </td>
+                            <td>
+                                <?= $row['staff_birthdate']; ?>
+                            </td>
+                            <td>
+                                <?= $row['staff_email']; ?>
+                            </td>
+                            <td>
+                                <?= $row['staff_contact']; ?>
+                            </td>
+                            <td>
+                                <?= $row['hired_date']; ?>
+                            </td>
+
+
                             <!-- <td>
-                                <?= $row['age']; ?>
+                                <?= $row['staff_birthdate']; ?>
                             </td>
                             <td>
                                 <?= $row['purok']; ?>
@@ -61,10 +81,10 @@
                                 data-target="#historyModal<?= $row['userid'] ?>"><i class="fas fa-history"></i></button> -->
                                 
                                 <button class="btn btn-act" style="margin: 0 10px;" data-toggle="modal"
-                                data-target="#addUserModal<?= $row['userid'] ?>"><i class="fas fa-pen"></i></button>
+                                data-target="#addUserModal<?= $row['staff_id'] ?>"><i class="fas fa-pen"></i></button>
 
                                 <button class="btn btn-dlt" data-toggle="modal"
-                                data-target="#deleteUserModal<?= $row['userid'] ?>"><i class="fas fa-trash"></i></button>
+                                data-target="#deleteUserModal<?= $row['staff_id'] ?>"><i class="fas fa-trash"></i></button>
                             </td>
                             </tr>
 
@@ -78,113 +98,53 @@
                             </div> -->
 
                             <!-- EDIT MODAL -->
-                            <div class="modal fade myel1-modal" id="addUserModal<?= $row['userid'] ?>" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+                            <div class="modal fade myel1-modal" id="addUserModal<?= $row['staff_id'] ?>" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content content">
                                     <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button>
-                                            <h4 class="text" id="addUserModalLabel"><b>EDIT CUSTOMER'S DETAILS</b></h4>
+                                            <h4 class="text" id="addUserModalLabel"><b>EDIT STAFF'S DETAILS</b></h4>
                                             <!-- <label for="text" class="text2">Write/Choose None if Unsure</label> -->
 
                                         </div>
                                         <div class="modal-body">
-                                            <form action="../components/update_user.php" method="POST">
+                                            <form action="../components/update_staffs.php" method="POST">
                                                 
                                                 <h5 class="text5">Account Information</h5>
                                                 <div class="form-group row">
                                                     <div class="col-md-3">
-                                                        <label>Username</label>
-                                                        <input type="text" class="form-control" name="username" id="userid" value="<?= $row['username'] ?>" style="height: 25px; width: 180px; font-size: 12px;" readonly>
+                                                        <label>Profile</label>
+                                                        <input type="text" class="form-control" name="staff_profile" value="<?= $row['staff_profile'] ?>" style="height: 25px; width: 180px; font-size: 12px;" readonly>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <label>Password</label>
-                                                        <input type="password" class="form-control" name="password" value="<?= $row['password'] ?>" style="height: 25px; width: 180px; font-size: 12px;" readonly>
-                                                    </div>
-                                                    <!-- NEED ATENSYON LATUR  -->
-                                                    <!-- <div class="col-md-3">
-                                                        <label>Verify Password</label>
-                                                        <input type="password" class="form-control" name="confirm_password" value="" style="height: 25px; width: 180px; font-size: 12px;">
-                                                    </div> -->
-                                                </div>
-                                                
-                                                <h5 class="text5">Personal Information</h5>
-                                                <div class="form-group row">
                                                     <div class="col-md-3">
                                                         <label>First Name</label>
-                                                        <input type="text" class="form-control" name="firstname" value="<?= $row['firstname'] ?>" style="height: 25px; width: 180px; font-size: 12px;">
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label>Middle Name (Optional)</label>
-                                                        <input type="text" class="form-control" name="middlename" value="<?= $row['middlename'] ?>" style="height: 25px; width: 180px; font-size: 12px;">
+                                                        <input type="text" class="form-control" name="staff_firstname" value="<?= $row['staff_firstname'] ?>" style="height: 25px; width: 180px; font-size: 12px;" required>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <label>Last Name</label>
-                                                        <input type="text" class="form-control" name="lastname" value="<?= $row['lastname'] ?>" style="height: 25px; width: 180px; font-size: 12px;">
+                                                        <input type="text" class="form-control" name="staff_lastname" value="<?= $row['staff_lastname'] ?>" style="height: 25px; width: 180px; font-size: 12px;" required>
                                                     </div>
-                                                    <div class="col-sm-3">
-                                                        <label>Suffix</label>
-                                                        <select class="form-control" name="suffix" style="height: 25px; width: 150px; font-size: 10px;">
-                                                            <option value="<?= $row['suffix'] ?>" style="font-size: 2px;"><?= $row['suffix'] ?></option>
-                                                            <option value="none" style="font-size: 12px;">none</option>
-                                                            <option value="Jr." style="font-size: 12px;">Jr.</option>
-                                                            <option value="Sr." style="font-size: 12px;">Sr.</option>
-                                                            <option value="III" style="font-size: 12px;">III</option>
-
-
-                                                        </select>
+                                                    <div class="col-md-3">
+                                                        <label>Birth Date</label>
+                                                        <input type="date" class="form-control" name="staff_birthdate" value="<?= $row['staff_birthdate'] ?>" style="height: 25px; width: 180px; font-size: 12px;" required>
                                                     </div>
-                                                    <div style="font-size: 10px; color: #2626262;">pangbulag but this is not visible</div>
-                                                </div>
+
+                                                </div>                                       
+                                                <div style="font-size: 10px; color: #262626;">pangbulag but this is not visible</div>
+
                                                 <div class="form-group row">
                                                     <div class="col-md-3">
-                                                        <label>Gender</label>
-                                                        <select class="form-control" name="gender" style="height: 25px; width: 180px; font-size: 10px;">
-                                                            <option value="<?= $row['gender'] ?>"><?= $row['gender'] ?></option>
-                                                            <option value="Male">Male</option>
-                                                            <option value="Female">Female</option>
-
-
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <label>Civil Status</label>
-                                                        <select class="form-control" name="civil_status" style="height: 25px; width: 180px; font-size: 10px;">
-                                                            <option value="<?= $row['civil_status'] ?>"><?= $row['civil_status'] ?></option>
-                                                            <option value="Single">Single</option>
-                                                            <option value="Married">Married</option>
-                                                            <option value="Widowed">Widowed</option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <label>Birthdate</label>
-                                                        <input type="date" class="form-control" name="birthdate" value="<?= $row['birthdate'] ?>" style="height: 25px; width: 180px; font-size: 12px;">
-                                                    </div>
-                          
-                                                    <div class="col-md-3">
-                                                        <label>Age</label>
-                                                        <input type="number" class="form-control" name="age" value="<?= $row['age'] ?>" style="height: 25px; width: 180px; font-size: 12px;">
-                                                    </div>
- 
-                                                </div>                                          
-                                                
-                                                <h5 class="text5">Contact Information</h5>
-                                                <div class="form-group row no-gutters">
-                                                    <div class="col-md-4 style">
-                                                        <label>Mobile Number</label>
-                                                        <input type="number" class="form-control" name="mobile_number" value="<?= $row['mobile_number'] ?>" style="height: 25px; width: 180px; font-size: 12px;" oninput="limitLength(this, 11)">
-                                                    </div>
-                                                    <div class="col-md-4" style="margin-left:-60px">
                                                         <label>Email Address</label>
-                                                        <input type="email" class="form-control" name="email" value="<?= $row['email'] ?>" style="height: 25px; width: 180px; font-size: 12px;">
+                                                        <input type="text" class="form-control" name="staff_email" value="<?= $row['staff_email'] ?>" style="height: 25px; width: 180px; font-size: 12px;">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label>Contact Number</label>
+                                                        <input type="text" class="form-control" name="staff_contact" value="<?= $row['staff_contact'] ?>" style="height: 25px; width: 180px; font-size: 12px;" maxlength="11" required>
                                                     </div>
                                                 </div>
-
-
-                                                <input type="hidden" name="userid" value="<?= $row['userid'] ?>">
+                                                <input type="hidden" name="staff_id" value="<?= $row['staff_id'] ?>">
                                                 <button type="submit" class="button">Save Changes</button>
                                             </form>
                                         </div>
@@ -194,20 +154,21 @@
 
 
                             <!-- DELETE MODAL  -->
-                            <div class="modal fade" id="deleteUserModal<?= $row['userid'] ?>" tabindex="-1" role="dialog" aria-labelledby="deletemodal" aria-hidden="true">
+                            <div class="modal fade" id="deleteUserModal<?= $row['staff_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="deletemodal" aria-hidden="true">
                                     <div class="modal-dialog" role="document" style="font-family: 'Oxanium';">
                                         <div class="modal-content">
                                             <div class="modal-header bg-danger">
-                                                <h5 class="modal-title"> DELETE CUSTOMER</h5>
+                                                <h5 class="modal-title"> DELETE STAFF</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="../components/delete_users.php" method="POST">
-                                                    <p> Are you sure you want to DELETE <?= htmlspecialchars($row['firstname']) ?> <?= htmlspecialchars($row['lastname']) ?> as your CUSTOMER ?</p>
-                                                    <input type="hidden" name="userid" value="<?= htmlspecialchars($row['userid']) ?>">
+                                                <form action="../components/delete_staffs.php" method="POST">
+                                                    <p> Are you sure you want to DELETE <?= htmlspecialchars($row['staff_firstname']) ?> <?= htmlspecialchars($row['staff_lastname']) ?> as your STAFF ?</p>
+                                                    <input type="hidden" name="staff_id" value="<?= htmlspecialchars($row['staff_id']) ?>">
                                                     <button type="submit" class="btn btn-danger">Yes</button>
+                                                    <button type="button" class="btn btn-success" style="background-color: #262626 !important; border-color: #262626 !important;" data-dismiss="modal" aria-label="close">No</button>
                                                 </form>
                                             </div>
                                         </div>

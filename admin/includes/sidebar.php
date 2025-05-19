@@ -67,7 +67,20 @@
             </div>
 
             <li class="nav-item">
-              <a href="PRODUCTS.php" class="nav-link active">
+              <a href="prodCHECKOUT.php" class="nav-link active">
+                <i class="nav-icon fas fa-cogs"></i>
+                <p>
+                TRANSACTIONS
+                </p>
+              </a>
+            </li>
+            
+            <div>
+              <img src="assets/PICTURE/DPRODUCTS.png" style="margin-bottom: 3.1px !important;">
+            </div>
+
+            <li class="nav-item">
+              <a href="realPRODUCTS.php" class="nav-link active">
                 <i class="nav-icon fas fa-cogs"></i>
                 <p>
                 PRODUCTS
@@ -118,18 +131,18 @@
               <img src="assets/PICTURE/DHISTORY.png" style="margin-bottom: 3.1px !important;">
             </div>
 
-            <li class="nav-item">
-              <a href="STAFFS.php" class="nav-link active">
-                <i class="nav-icon fas fa-user-cog"></i>
-                <p>
-                STAFFS
-                </p>
-              </a>
-            </li>
+         <?php if ($_SESSION['staff_username'] === 'SuperA' || $_SESSION['staff_password'] === 'admin123'): ?> 
+        <li class="nav-item">
+          <a href="STAFFS.php" class="nav-link active">
+            <i class="nav-icon fas fa-user-cog"></i>
+            <p>STAFFS</p>
+          </a>
+        </li>
 
-            <div>
-              <img src="assets/PICTURE/DSTAFFS.png" style="margin-bottom: 3.1px !important;">
-            </div>
+        <div>
+          <img src="assets/PICTURE/DSTAFFS.png" style="margin-bottom: 3.1px !important;">
+        </div>
+      <?php endif; ?>
 
             <!-- <li class="nav-item">
               <a href="uAPPOINTMENTS.php" class="nav-link">

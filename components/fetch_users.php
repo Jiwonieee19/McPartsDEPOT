@@ -2,9 +2,19 @@
 
 include "../db_connect/db_connection.php";
 
-$query = "SELECT * FROM users";
-$result = mysqli_query($conn, $query);
+$query = "SELECT * FROM customers";
+$customersResult = mysqli_query($conn, $query);
 
+$query = "SELECT * FROM suppliers";
+$suppliersResult = mysqli_query($conn, $query);
+
+$query = "SELECT * FROM staffs";
+$staffsResult = mysqli_query($conn, $query);
+
+// fetch staff info in topbar
+    // $staff_id = $_SESSION['staff_id'];
+    // $query = "SELECT staff_id FROM staffs WHERE staff_id = '$staff_id'";
+    // $staffInfoResult = mysqli_query($conn, $query);
 
 // SA DASHBOARD RANI TANAN THE REST NAA SA BABA
 $countQuery = "SELECT COUNT(*) AS totalusers FROM users";

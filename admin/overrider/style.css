@@ -39,6 +39,7 @@
     margin: 1.7rem 0 0.7rem 0 !important;
     color: #00A9C7;
     font-weight: 700;
+    /* align-self: left !important; */
 }
 
 .myel1-modal .close {

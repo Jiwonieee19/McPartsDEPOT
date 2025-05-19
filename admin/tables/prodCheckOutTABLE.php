@@ -1,4 +1,5 @@
-      <!-- /.row -->
+
+        <!-- /.row -->
       <!-- Main row -->
       <div class="row" style="margin: 0rem 1.5rem !important;">
             <!-- Left col -->
@@ -17,139 +18,65 @@
                     <table id="userTable" class="display">
 
                         <thead>
-                        <tr class="user-row" data-purok="<?= $row['purok']; ?>">
+                        <tr class="user-row">
                             <th>CUS ID</th>
-                            <th>FULLNAME</th>
+                            <th>FULL NAME</th>
                             <th>EMAIL</th>
-                            <th>ACCOUNT CREATION</th>
+                            <th>CONTACT</th>
+                            <th>CREATED AT</th>
                             <!-- <th>Age</th>
                             <th>Purok</th> -->
                             <!-- <th>Status</th> -->
-                            <th class="text-center">PROCEED TO PAYMENT</th>
+                            <th class="text-center">PROCEED</th>
 
                         </tr>
 
                         </thead>
                         <tbody>
-                        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                        <?php while ($row = mysqli_fetch_assoc($customersResult)) { ?>
 
-                            <tr data-purok="<?= $row['purok']; ?>">
+                            <tr>
                             <td>
-                                <?= $row['userid']; ?>
+                                <?= $row['customer_id']; ?>
                             </td>
                             <td>
-                                <?= $row['username']; ?>
+                                <?= $row['customer_fullname']; ?>
                             </td>
                             <td>
-                                <?= $row['firstname']; ?>
+                                <?= $row['customer_email']; ?>
                             </td>
                             <td>
-                                <?= $row['lastname']; ?>
-                            </td>
-                            <!-- <td>
-                                <?= $row['age']; ?>
+                                <?= $row['customer_contact']; ?>
                             </td>
                             <td>
-                                <?= $row['purok']; ?>
-                            </td> -->
+                                <?= $row['created_at']; ?>
+                            </td>
+
                             <td class="text-center">
                                 <!-- <button class="btn btn-sm" style="background-color: #00441B; color: white;" data-toggle="modal"
                                 data-target="#residentDetailsModal<?= $row['userid'] ?>"> View</button> -->
 
-
                                 <!-- <button class="btn btn-act" data-toggle="modal"
                                 data-target="#historyModal<?= $row['userid'] ?>"><i class="fas fa-history"></i></button> -->
-                                
-                                <button class="btn btn-act" style="margin: 0 10px;" data-toggle="modal"
-                                data-target="#addUserModal<?= $row['userid'] ?>"><i class="fas fa-credit-card"></i></button>
+                                <form method="POST" action="PRODUCTS1.php" style="display:inline;">
+                                    <input type="hidden" name="customer_id" value="<?= $row['customer_id'] ?>">
+                                    <input type="hidden" name="customer_fullname" value="<?= htmlspecialchars($row['customer_fullname']) ?>">
+                                    <input type="hidden" name="customer_email" value="<?= htmlspecialchars($row['customer_email']) ?>">
+                                    <input type="hidden" name="customer_contact" value="<?= htmlspecialchars($row['customer_contact']) ?>">
+                                    <button type="submit" class="btn btn-act" style="margin: 0 10px;">
+                                        <i class="fas fa-credit-card"></i>
+                                    </button>
+                                </form>
 
                             </td>
                             </tr>
 
-                            <!-- HISTORY MODAL -->
-                            <!-- <div class="modal fade myel1-modal" id="historyModal<?= $row['userid'] ?>" role="dialog" aria-labelledby="historyModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content" style="background-color: #262626;">
-                                        include()
-                                    </div>
-                                </div>
-                            </div> -->
-
-                            <!-- PAYMENT MODAL -->
-                            <div class="modal fade myel1-modal" id="addUserModal<?= $row['userid'] ?>" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content content">
-                                    <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            <h4 class="text" id="addUserModalLabel"><b>PROCESS PAYMENT</b></h4>
-                                            <!-- <label for="text" class="text2">Write/Choose None if Unsure</label> -->
-
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="../components/update_user.php" method="POST">
-                                                
-                                                <h5 class="text5">Customer's Information</h5>
-                                                <div class="form-group row">
-                                                    <div class="col-md-3">
-                                                        <label>First Name</label>
-                                                        <input type="text" class="form-control" name="firstname" value="<?= $row['firstname'] ?>" style="height: 25px; width: 180px; font-size: 12px;" readonly>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label>Last Name</label>
-                                                        <input type="text" class="form-control" name="middlename" value="<?= $row['lastname'] ?>" style="height: 25px; width: 180px; font-size: 12px;" readonly>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label>Account</label>
-                                                        <input type="text" class="form-control" name="lastname" value="Customer" style="height: 25px; width: 180px; font-size: 12px;" readonly>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label>Username</label>
-                                                        <input type="text" class="form-control" name="username" id="userid" value="<?= $row['username'] ?>" style="height: 25px; width: 180px; font-size: 12px;" readonly>
-                                                    </div>
-                                                    <div style="font-size: 10px; color: #2626262;">pangbulag but this is not visible</div>
-                                                </div>                                       
-                                                
-                                                <h5 class="text5">Contact Information</h5>
-                                                <div class="form-group row no-gutters">
-                                                    <div class="col-md-4 style">
-                                                        <label>Mobile Number</label>
-                                                        <input type="number" class="form-control" name="mobile_number" value="<?= $row['mobile_number'] ?>" style="height: 25px; width: 180px; font-size: 12px;" oninput="limitLength(this, 11)" readonly>
-                                                    </div>
-                                                    <div class="col-md-4" style="margin-left:-60px">
-                                                        <label>Email Address</label>
-                                                        <input type="email" class="form-control" name="email" value="<?= $row['email'] ?>" style="height: 25px; width: 180px; font-size: 12px;" readonly>
-                                                    </div>
-                                                </div>
-
-                                                <h5 class="text5">Payment Details</h5>
-                                                <div class="form-group row">
-                                                    <div class="col-md-3">
-                                                        <label>TOTAL AMOUNT</label>
-                                                        <input type="number" class="form-control" name="username" id="userid" value="<?= $row['username'] ?>" style="height: 25px; width: 180px; font-size: 12px;" readonly>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label>PAID AMOUNT</label>
-                                                        <input type="number" class="form-control" name="username" value="<?= $row['username'] ?>" style="height: 25px; width: 180px; font-size: 12px;">
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label>CHANGE AMOUNT</label>
-                                                        <input type="number" class="form-control" name="username" value="<?= $row['username'] ?>" style="height: 25px; width: 180px; font-size: 12px;" readonly>
-                                                    </div>
-                                                </div>
-
-
-                                                <input type="hidden" name="userid" value="<?= $row['userid'] ?>">
-                                                <button type="submit" class="button" style="max-width: 200px !important;">Complete Transaction</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                         <?php } ?>
 
+                        <!-- <?php while ($row = mysqli_fetch_assoc($cartResult)) {
+                            $_SESSION['cart_id'] = $row['cart_id'];
+                        }?> -->
                         </tbody>
 
                     </table>
@@ -235,7 +162,6 @@
             input.value = input.value.slice(0, maxLength);
         }
     }
-
 
 
  </script>

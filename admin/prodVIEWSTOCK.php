@@ -11,12 +11,16 @@
   include('includes/sidebar.php');
   include('includes/top-navbar.php');
   include('includes/notification.php');
-  include('../components/fetch_users.php');
+  include('../components/fetch_products.php');
 
+
+  if (isset($_POST['supplier_id'])) {
+    $_SESSION['supplier_id'] = $_POST['supplier_id'];
+}
 ?>
 <style>
-        #userTable tbody tr:hover td:nth-child(-n+4),
-        #userTable tbody tr:hover td:nth-child(-n+4) * {
+        #userTable tbody tr:hover td:nth-child(-n+7),
+        #userTable tbody tr:hover td:nth-child(-n+7) * {
         color: #00A9C7 !important;
         }
 </style>
@@ -38,7 +42,7 @@
         <div class="row mb-3 custom-div">
             <div class="col-md-8 right-div">
                 <nav class="nav custom-status">
-                <a class="nav-link active" style="border-radius: 0.7rem !important; margin-left: 0.5rem !important;" href="PRODUCTS.php">Back to Products <i class="nav-icon fas fa-cogs"></i></a>
+                <a class="nav-link active" style="border-radius: 0.7rem !important; margin-left: 0.5rem !important;" href="PRODUCTS1.php"><i class="nav-icon fas fa-long-arrow-alt-left"></i></a>
                     <!-- <a class="nav-link" style="pointer-events: none !important;">|</a>
                     <a class="nav-link" href="#">Verified</a>
                     <a class="nav-link" style="pointer-events: none !important;">|</a>
@@ -50,9 +54,6 @@
             <div class="col-md-4 text-right" style="margin-top: 0.5rem !important;">
                 <div class="d-flex justify-content-end align-items-center custom-controls">
 
-                <a href="prodCONFIRM.php">
-                    <button class="btn btn-primary" style="margin-right: 1rem !important;">Confirm</button>
-                </a>
                 <!-- <select class="form-control w-auto mr-2" id="purokFilter">
                     <option value="all" selected>All Months</option>
                     <option value="01">Jan</option>
@@ -75,7 +76,7 @@
 <!-- /.content-header -->
 
     <?php 
-        // include('tables/productSCROLL.php');
+        include('tables/prodStockTABLE.php');
     ?>
 
   <!-- Main content -->

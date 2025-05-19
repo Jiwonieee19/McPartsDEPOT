@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const offset = 70; 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const offset = 70;
     const signinContainer = document.querySelector('.signin-container');
 
     function scrollToElement(elementId, callback) {
@@ -23,38 +24,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+
     function addScrollListener(linkId, targetId, callback) {
-        document.getElementById(linkId).addEventListener('click', function(event) {
+        document.getElementById(linkId).addEventListener('click', function (event) {
             event.preventDefault();
             scrollToElement(targetId, callback);
         });
     }
 
-    addScrollListener('nav-home', 'home', function() {
+    addScrollListener('nav-home', 'home', function () {
         signinContainer.style.display = 'none';
     });
 
     addScrollListener('nav-about', 'about');
 
-    addScrollListener('nav-signin', 'home', function() {
+    addScrollListener('nav-signin', 'home', function () {
         signinContainer.style.display = 'block';
     });
 
-    addScrollListener('nav-contact', 'contact');
+    addScrollListener('nav-explore', 'explore');
 
-    addScrollListener('footer-home', 'home', function() {
+    addScrollListener('footer-home', 'home', function () {
         signinContainer.style.display = 'none';
     });
 
     addScrollListener('footer-about', 'about');
 
-    addScrollListener('footer-signin', 'home', function() {
+    addScrollListener('footer-signin', 'home', function () {
         signinContainer.style.display = 'block';
     });
 
     addScrollListener('footer-contact', 'contact');
 
-    document.getElementById('about-btn').addEventListener('click', function(event) {
+    document.getElementById('about-btn').addEventListener('click', function (event) {
         event.preventDefault();
         scrollToElement('about');
     });

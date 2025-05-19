@@ -15,8 +15,8 @@
 
 ?>
 <style>
-        #userTable tbody tr:hover td:nth-child(-n+4),
-        #userTable tbody tr:hover td:nth-child(-n+4) * {
+        #userTable tbody tr:hover td:nth-child(-n+5),
+        #userTable tbody tr:hover td:nth-child(-n+5) * {
         color: #00A9C7 !important;
         }
 </style>
@@ -27,7 +27,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 header-custom">BOUGHT BY WHOM?</h1> 
+                <h1 class="m-0 header-custom">CHOOSE CUSTOMER</h1> 
                 <!-- WHO WILL BUY? or CHOOSE CUSTOMER -->
             </div>
             <!-- <div>
@@ -39,14 +39,10 @@
         <div class="row mb-3 custom-div">
             <div class="col-md-8 right-div">
                 <nav class="nav custom-status">
-                <a class="nav-link active" style="border-radius: 0.7rem !important; margin-left: 0.5rem !important;" href="prodVIEWCART.php">Back to Cart <i class="nav-icon fas fa-shopping-cart"></i></a>
-                    <!-- <a class="nav-link" style="pointer-events: none !important;">|</a>
-                    <a class="nav-link" href="#">Verified</a>
-                    <a class="nav-link" style="pointer-events: none !important;">|</a>
-                    <a class="nav-link" href="#">Approved</a> -->
-                    <!-- <a class="nav-link" style="pointer-events: none !important;">|</a> -->
-                    <!-- <a class="nav-link" style="border-top-right-radius: 0.7rem !important; border-bottom-right-radius: 0.7rem !important;" href="#">Supplier</a>
-                </nav> -->
+                    <a class="nav-link" style="border-top-left-radius: 0.7rem !important; border-bottom-left-radius: 0.7rem !important; margin-left: 0.5rem !important;color: #00A9C7 !important; background-color: #383838 !important;"
+                    href="prodCHECKOUT.php">Customer</a>
+                    <a class="nav-link" style="border-top-right-radius: 0.7rem !important; border-bottom-right-radius: 0.7rem !important;" href="prodCONFIRM.php">Supplier</a>
+                </nav>
             </div>
             <div class="col-md-4 text-right" style="margin-top: 0.5rem !important;">
                 <div class="d-flex justify-content-end align-items-center custom-controls">
@@ -59,110 +55,48 @@
 
 
         <!-- Add Customer -->
-                    <div class="modal fade myel1-modal" style="text-align: left;" id="addUserModalNew" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <h4 class="text" id="addUserModalLabel"><b>ADD NEW CUSTOMER</b></h4>
-                                    <!-- <label for="text" class="text2">Write/Choose None if Unsure</label> -->
+        <div class="modal fade myel1-modal" style="text-align: left;" id="addUserModalNew" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                             <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            <h4 class="text" id="addUserModalLabel"><b>ADD NEW CUSTOMER</b></h4>
+                                            <!-- <label for="text" class="text2">Write/Choose None if Unsure</label> -->
 
-                                </div>
-                                <div class="modal-body">
-                                    <form action="../components/add_user.php" method="POST">
-                                        
-                                        <h5 class="text5">Account Information</h5>
-                                        <div class="form-group row">
-                                            <div class="col-md-3">
-                                                <label>Username</label>
-                                                <input type="text" class="form-control" name="username" required id="userid" style="height: 25px; width: 180px; font-size: 12px;" maxlength="8" placeholder="not greater than 8 character">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label>Password</label>
-                                                <input type="password" class="form-control" name="password" required style="height: 25px; width: 180px; font-size: 12px;" minlength="8" placeholder="not less than 8 character">
-                                            </div>
-                                            <!-- NEED ATENSYON LATUR  -->
-                                            <div class="col-md-3">
-                                                <label>Verify Password</label>
-                                                <input type="password" class="form-control" name="confirm_password" value="" required style="height: 25px; width: 180px; font-size: 12px;">
-                                            </div>
                                         </div>
-                                        
-                                        <h5 class="text5">Personal Information</h5>
-                                        <div class="form-group row">
-                                            <div class="col-md-3">
-                                                <label>First Name</label>
-                                                <input type="text" class="form-control" name="firstname" required style="height: 25px; width: 180px; font-size: 12px;">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label>Middle Name (Optional)</label>
-                                                <input type="text" class="form-control" name="middlename" style="height: 25px; width: 180px; font-size: 12px;">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label>Last Name</label>
-                                                <input type="text" class="form-control" name="lastname" required style="height: 25px; width: 180px; font-size: 12px;">
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <label>Suffix</label>
-                                                <select class="form-control" name="suffix" required style="height: 25px; width: 150px; font-size: 10px;">
-                                                    <option value="none" style="font-size: 12px;">none</option>
-                                                    <option value="Jr." style="font-size: 12px;">Jr.</option>
-                                                    <option value="Sr." style="font-size: 12px;">Sr.</option>
-                                                    <option value="III" style="font-size: 12px;">III</option>
+                                        <div class="modal-body">
+                                            <form action="../components/add_prodcustomers.php" method="POST">
+                                                
+                                                
+                                                <h5 class="text5">Account Information</h5>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Full Name</label>
+                                                        <input type="text" class="form-control" name="customer_fullname" required style="height: 25px; width: 180px; font-size: 12px;">
+                                                    </div>
 
+                                                </div>
+                                                <div style="font-size: 10px; color: #262626;">pangbulag but this is not visible</div>
 
-                                                </select>
-                                            </div>
-                                            <div style="font-size: 10px; color: #262626;">pangbulag but this is not visible</div>
+                                                <div class="form-group row">
+                                                    <div class="col-md-3">
+                                                        <label>Email Address</label>
+                                                        <input type="email" class="form-control" name="customer_email" required style="height: 25px; width: 180px; font-size: 12px;">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label>Contact Number</label>
+                                                        <input type="text" class="form-control" name="customer_contact" required style="height: 25px; width: 180px; font-size: 12px;" maxlength="11">
+                                                    </div>
+                                                </div>
+
+                                                <button type="submit" class="button">Save Details</button>
+                                            </form>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-3">
-                                                <label>Gender</label>
-                                                <select class="form-control" name="gender" required style="height: 25px; width: 180px; font-size: 10px;">
-                                                    <option value="Male">Male</option>
-                                                    <option value="Female">Female</option>
-
-
-                                                </select>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label>Account For:</label>
-                                                <input type="text" class="form-control" name="" required style="height: 25px; width: 180px; font-size: 12px;" placeholder="CUSTOMER" readonly>
-                                                <!-- <select class="form-control" name="civil_status" required style="height: 25px; width: 180px; font-size: 10px;">
-                                                    <option value="Customer">Customer</option>
-                                                    <option value="Supplier">Supplier</option>
-                                                </select> -->
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label>Birthdate</label>
-                                                <input type="date" class="form-control" name="birthdate" required style="height: 25px; width: 180px; font-size: 12px;">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label>Age</label>
-                                                <input type="number" class="form-control" name="age" required style="height: 25px; width: 180px; font-size: 12px;">
-                                            </div>
-                                        </div>
-
-                                        <h5 class="text5">Contact Information</h5>
-                                        <div class="form-group row no-gutters">
-                                            <div class="col-md-4 style">
-                                                <label>Mobile Number</label>
-                                                <input type="number" class="form-control" name="mobile_number" required style="height: 25px; width: 180px; font-size: 12px;" oninput="limitLength(this, 11)">
-                                            </div>
-                                            <div class="col-md-4" style="margin-left:-60px">
-                                                <label>Email Address</label>
-                                                <input type="email" class="form-control" name="email" required style="height: 25px; width: 180px; font-size: 12px;">
-                                            </div>
-                                        </div>
-
-                                        <button type="submit" class="button">Save Details</button>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
      
                 </div>

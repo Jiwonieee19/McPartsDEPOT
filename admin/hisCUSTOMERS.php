@@ -11,7 +11,7 @@
   include('includes/sidebar.php');
   include('includes/top-navbar.php');
   include('includes/notification.php');
-  include('../components/fetch_users.php');
+  include('../components/fetch_transactions.php');
 
 ?>
 

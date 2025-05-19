@@ -1,235 +1,189 @@
 <?php
 include "db_connect/db_connection.php";
+// include('admin/includes/notification.php');
+// include "operations/auth_process.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <!-- Bootstrap 4 CSS -->
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <title>DRAFT</title>
-    <link rel="stylesheet" href="admin/overrider/style4.css">
+        <title>McPARTS DEPOTS TORIL DAVAO CITY</title>
+        <link rel="stylesheet" href="admin/overrider/LANDING.css">
+    </head>
+    <body>  
+            <header>
+                <div class="nav-container">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+                    <nav>
+                    <div class="links">
+                    <div class="link"> <a href="#" id="nav-home">HOME</a></div>
+                    <div class="link"> <a href="#" id="nav-explore">EXPLORE US</a></div>
+                    <div class="link"> <a href="#" id="nav-about">ABOUT US</a></div>
+                    <div class="link signin-btn"> <a href="#" id="nav-signin">LOG IN</a></div>
+                    </div>
+                    </nav>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f6f9;
-        }
-
-        section.vh-100 {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .h-custom {
-            height: 100%;
-        }
-
-        .container-fluid {
-            max-width: 1200px;
-            padding: 0 15px;
-        }
-
-        .row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .col-md-9 img {
-            width: 100%;
-            max-width: 100%;
-            object-fit: cover;
-        }
-
-        .form-outline {
-            margin-bottom: 20px;
-        }
-
-        .form-outline input,
-        .form-outline label {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-        }
-
-        .form-outline input {
-            background-color: #f4f6f9;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            color: #333;
-        }
-
-        .form-outline label {
-            font-size: 14px;
-            color: #555;
-        }
-
-        .btn {
-            background-color: #007bff;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 5px;
-            width: 100%;
-            border: none;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .divider {
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .divider p {
-            margin: 0;
-        }
-
-        .divider:before,
-        .divider:after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #eee;
-        }
-
-        .divider p {
-            padding: 0 10px;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .text-body {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .text-body:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .col-md-9,
-            .col-md-8 {
-                width: 100%;
-                padding: 15px;
-            }
-        }
-
-        .footer {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .footer .social-icons a {
-            color: white;
-            margin: 0 15px;
-            font-size: 18px;
-        }
-
-        .footer .social-icons a:hover {
-            color: #ccc;
-        }
-
-    </style>
-</head>
-
-<body>
-    <section class="vh-100">
-        <div class="container-fluid h-custom">
-            <div class="row">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                    <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp" alt="Login Image"> -->
                 </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form action="operations/auth_process.php" method="POST">
-                        <!-- Sign-in with social media -->
-                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start mb-4">
-                            <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-                            <button type="button" class="btn btn-primary btn-floating mx-1">
-                                <i class="fab fa-facebook-f"></i>
-                            </button>
-                            <button type="button" class="btn btn-primary btn-floating mx-1">
-                                <i class="fab fa-twitter"></i>
-                            </button>
-                            <button type="button" class="btn btn-primary btn-floating mx-1">
-                                <i class="fab fa-linkedin-in"></i>
-                            </button>
-                        </div>
+            </header>
 
-                        <!-- Divider -->
-                        <div class="divider d-flex align-items-center my-4">
-                            <p class="text-center fw-bold mx-3 mb-0">Or</p>
+            <section class="home" id="home">
+                <!-- <div class="main-container">
+                    <div class="content">
+                        <img src="admin/assets/images/icons/logo.png" alt="logo"> <br> 
+                        <i>Welcome to</i><br>
+                        <b class="b1">Barangay Dimagiba</b> <br>
+                        <b class="b2">Healthcare Center</b>
+                        <div class="btn">
+                            <button id="about-btn">About Us</button>
                         </div>
-
-                        <!-- Email input -->
-                        <div class="form-outline mb-4">
-                            <input type="text" name="username" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address" required>
-                            <label class="form-label" for="form3Example3">Email address</label>
+                    </div>       -->
+                        <div class="signin-container" id="signin">
+                                <div class="signin">
+                                    <form action="operations/auth_process.php" method="POST">
+                                        <!-- <h1>SIGN IN</h1> -->
+                                        <h5 style="margin-left: 2vh; margion-top: 20px;">Enter Account Details</h5>
+                                        <input type="text" name="staff_username" placeholder="Username">
+                                        <input type="password" name="staff_password" placeholder="Password">
+                                        <button type="submit" name="signin" >Log In</button>
+                                    </form>
+                                </div>
                         </div>
-
-                        <!-- Password input -->
-                        <div class="form-outline mb-3">
-                            <input type="password" name="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password" required>
-                            <label class="form-label" for="form3Example4">Password</label>
-                        </div>
-
-                        <!-- Remember me checkbox and Forgot password link -->
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <div class="form-check mb-0">
-                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3">
-                                <label class="form-check-label" for="form2Example3">
-                                    Remember me
-                                </label>
-                            </div>
-                            <a href="#!" class="text-body">Forgot password?</a>
-                        </div>
-
-                        <!-- Login button -->
-                        <div class="text-center text-lg-start">
-                            <button type="submit" name="signin" class="btn btn-primary btn-lg">Login</button>
-                        </div>
-
-                        <!-- Register Link -->
-                        <p class="small fw-bold mt-2 pt-1 mb-0 text-center">Don't have an account? <a href="#!" class="link-danger">Register</a></p>
-                    </form>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
+            <section class="what">
+                <div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>Copyright © 2020. All rights reserved.</p>
-        <div class="social-icons">
-            <a href="#!" class="text-white"><i class="fab fa-facebook-f"></i></a>
-            <a href="#!" class="text-white"><i class="fab fa-twitter"></i></a>
-            <a href="#!" class="text-white"><i class="fab fa-google"></i></a>
-            <a href="#!" class="text-white"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-    </div>
+                </div>
+            </section>
 
-</body>
+
+            <section class="explore" id="explore">
+                <div class="carousel1">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <!-- <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol> -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img class="d-block w-100" src="admin/assets/images/CAROUSEL/PIC1.png" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src="admin/assets/images/CAROUSEL/PIC2.png" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src="admin/assets/images/CAROUSEL/PIC3.png" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src="admin/assets/images/CAROUSEL/PIC4.png" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src="admin/assets/images/CAROUSEL/PIC5.png" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src="admin/assets/images/CAROUSEL/PIC6.png" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src="admin/assets/images/CAROUSEL/PIC7.png" alt="Third slide">
+                    </div>
+                    <div class="carousel-item">
+                    <img class="d-block w-100" src="admin/assets/images/CAROUSEL/PIC8.png" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </div>
+                </div>
+                
+                
+            </section>
+
+                <section class="about" id="about">
+                <div></div>
+                <!-- <div class="head-container">
+                <h1 class="heading"> <span>About</span> Us</h1>
+
+                <div class="row">
+                    <div class="img-container">
+                        <img src="admin/assets/images/icons/pic.jpg" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3>How it was started?</h3>
+                        <p>Barangay Dimagiba Health Care Center, located in Barangay Dimagiba, City of Yuem, 
+                            is dedicated to providing accessible and quality healthcare to the community. Our health workers offers 
+                            medical consultations, immunizations, maternal care, and health education to promote overall 
+                            well-being. Committed to serving with compassion, we strive to ensure a healthier and safer 
+                            Barangay Dimagiba.
+                        </p>
+
+                        <p>Together, let's build a stronger, healthier Barangay Dimagiba! </p>
+                    </div>
+
+                    </div>
+                </div> -->
+                
+                
+            </section>
+
+            <!-- <section class="footer" id="contact">
+                <div class="box-container">
+
+                    <div class="box">
+                        <h3>Quick links</h3>
+                        <a href="#" id="footer-home"> Home</a>
+                        <a href="#" id="footer-about"> About Us</a>
+                        <a href="#" id="footer-contact"> Contact</a>
+                        <a href="#" id="footer-signin"> Sign In</a>
+                    </div>
+
+                    <div class="box">
+                        <h3>Location</h3>
+                        <a href="#"> Barangay Dimagiba, City of Yuem <br> <br>Philippines, 8000</a>
+                    </div>
+
+                    <div class="box">
+                        <h3>Contact Us</h3>
+                        <a href="#"> 09123456789</a>
+                        <a href="#">barangaydimagiba@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="credit"> Created by: <span> Unsagane Group</span> | All Rights Reserved</div>
+            </section> -->
+
+            
+            <script src="admin/js/script.js"></script>
+           <!-- jQuery (required by Bootstrap 4) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Popper.js (for tooltips and popovers) -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap 4 JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+            
+    </body>
+
+
+
 
 </html>

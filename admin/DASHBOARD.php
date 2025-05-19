@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Redirect to login if no session found
-if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
+if (!isset($_SESSION['staff_username']) && !isset($_SESSION['staff_password'])) {
   header("Location: ../landing.php");
   exit();
 }
@@ -216,7 +216,7 @@ include('../components/fetch_users.php');
                     <!-- calendar-container -->
                     <div class="card" style="background-color: #7B7B7B; color: #262626;">
                     <div class="card-header border-0 ui-sortable-handle" style="cursor: move;">
-                        <h3 class="card-title" style="margin-top: 7px !important; font-weight: 700 !important;">
+                        <h3 class="card-title" style="margin-top: 7px !important; font-weight: 700 !important; color: #262626 !important;">
                             <i class="far fa-calendar-alt" style="margin-right: 7px;"></i>CALENDAR
                         </h3>
                         <!-- tools card -->
